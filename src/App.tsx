@@ -28,21 +28,21 @@ function App() {
 
     return (
         <>
-            <nav>
-                <a href="" className='text-brand-primary text-4xl font-mono font-bold mx-8'>J</a>
+            <div className='navbar'>
+                <a href="#landing" className='text-brand-primary text-4xl font-mono font-bold mx-8'>J</a>
                 <div className='flex items-center justify-center gap-6'>
                     <ol className='links text-white flex justify-between gap-4'>
                         <li><a href="#about">About</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ol>
                     <button className='bg-white rounded-full m-[2px] w-[112px] h-[52px]'>
                         CV
                     </button>
                 </div>
-            </nav>
+            </div>
 
-            <section className='h-[800px] bg-black text-light flex flex-col justify-center items-center'>
+            <section id='landing' className='h-[800px] bg-black text-light flex flex-col justify-center items-center'>
                 <div className='font-bold'>
                     <span className='text-7xl text-white'>Hi, I'm </span>
                     <h1 className='text-brand-primary font-mono text-[78px] inline-block'>Joheb</h1>
@@ -74,7 +74,7 @@ function App() {
                 </div>
             </section>
 
-            <section className='bg-neutral-100'>
+            <section id='projects' className='bg-neutral-100'>
                 <div className='flex flex-col gap-10 py-10 items-center'>
                     <h1 className='section-title'>Stuff I've Made</h1>
                     {projects.map((project, index) => (
@@ -89,7 +89,7 @@ function App() {
                 </div>
             </section>
 
-            <footer className='flex items-center justify-center py-16'>
+            <footer id='contact' className='flex items-center justify-center py-16'>
                 <div className='bg-black rounded-2xl w-[622px] text-white p-5'>
                     <h1 className='section-title'>Get In Touch</h1>
                     <p>

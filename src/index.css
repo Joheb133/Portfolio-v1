@@ -2,24 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 @layer components{
     body {
         counter-reset: headingCount;
     }
 
-    nav {
-        @apply fixed left-1/2 -translate-x-1/2 
-        flex items-center justify-center
-        rounded-full w-fit mt-5
-        bg-[#252525] bg-opacity-70 backdrop-blur-sm 
-        z-50
+    .navbar::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(37, 37, 37, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: -1;
     }
 
-    nav .links {
+    .navbar {
+        @apply fixed left-1/2 -translate-x-1/2 
+        flex items-center justify-center
+        rounded-full w-fit mt-5 z-20 overflow-hidden
+    }
+
+    .navbar .links {
+        opacity: 1;
         counter-reset: navLinkCount;
     }
 
-    nav .links li::before {
+    .navbar .links a::before {
         content: "0" counter(navLinkCount) ".";
         counter-increment: navLinkCount;
         color: #00D42F;
@@ -28,9 +43,19 @@
         margin-right: 2px;
     }
 
+    .navbar .links li {
+        transition: color 200ms ease-in-out;
+    }
+
+    .navbar .links li:hover {
+        color: #00D42F;
+        transition: color 100ms ease-in-out;
+    }
+
     .section-title {
         font-size: 40px;
-        font-weight: 500;
+        font-weight: 400;
+        line-height: 40px;
     }
 
     .section-title::before {

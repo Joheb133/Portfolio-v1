@@ -17,6 +17,20 @@ function App() {
                     </button>
                 </div>
             </div>
+
+            <div className='h-[800px] bg-black text-light flex flex-col justify-center items-center'>
+                <div className='font-bold'>
+                    <span className='text-7xl text-white'>Hi, I'm </span>
+                    <h1 className='text-brand-primary font-mono text-[78px] inline-block'>Joheb</h1>
+                </div>
+                <h1 className='text-7xl font-bold'>I build things for the web</h1>
+                <p className='max-w-lg text-center text-light my-4'>
+                    I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatment.
+                </p>
+                <button>
+                    Get In Touch
+                </button>
+            </div>
         </>
     )
 }

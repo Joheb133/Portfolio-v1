@@ -4,10 +4,10 @@
 
 @layer components{
     .navbar {
-        @apply sticky left-1/2 -translate-x-1/2 
+        @apply fixed left-1/2 -translate-x-1/2 
         flex items-center justify-center
         rounded-full w-fit mt-5
-        bg-[#000000] bg-opacity-50 backdrop-blur-sm 
+        bg-[#252525] bg-opacity-70 backdrop-blur-sm 
     }
 
     .navbar .links {

@@ -7,7 +7,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-primary': '#00D42F', // Custom name approach 
+                'brand-primary': '#00D42F',
+                'light': '#969696',
+                'dark': '#2C2C2C'
             }
         },
     },

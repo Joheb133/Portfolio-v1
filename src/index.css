@@ -2,15 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --brand-primary: #00D42F
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-@layer components{
-    body {
-        counter-reset: headingCount;
-    }
+body {
+    counter-reset: headingCount;
+}
 
+.custom-button {
+    user-select: none;
+    color: var(--brand-primary);
+    border: solid 1px white;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    box-shadow:
+        7px 7px 0 0px rgb(0, 0, 0),
+        7px 7px 0 1px rgb(255, 255, 255);
+}
+
+.custom-button:active {
+    transform: translate(7px, 7px);
+    box-shadow: none;
+}
+
+@layer components {
     .navbar::before {
         content: "";
         position: fixed;
@@ -24,9 +49,7 @@ html {
     }
 
     .navbar {
-        @apply fixed left-1/2 -translate-x-1/2 
-        flex items-center justify-center
-        rounded-full w-fit mt-5 z-20 overflow-hidden
+        @apply fixed left-1/2 -translate-x-1/2 flex items-center justify-center rounded-full w-fit mt-5 z-20 overflow-hidden
     }
 
     .navbar .links {
@@ -37,7 +60,7 @@ html {
     .navbar .links a::before {
         content: "0" counter(navLinkCount) ".";
         counter-increment: navLinkCount;
-        color: #00D42F;
+        color: var(--brand-primary);
         font-family: monospace;
         font-size: 16px;
         margin-right: 2px;
@@ -48,7 +71,7 @@ html {
     }
 
     .navbar .links li:hover {
-        color: #00D42F;
+        color: var(--brand-primary);
         transition: color 100ms ease-in-out;
     }
 
@@ -61,14 +84,12 @@ html {
     .section-title::before {
         content: counter(headingCount) ". ";
         counter-increment: headingCount;
-        color: #00D42F;
+        color: var(--brand-primary);
         font-family: monospace;
         font-size: 36px;
     }
 
     .project-card-icon {
-        @apply text-[#BABABB] 
-        hover:text-brand-primary transition-colors duration-300 ease-in-out
-        hover:cursor-pointer
+        @apply text-[#BABABB] cursor-pointer hover:text-brand-primary transition-colors duration-300 ease-in-out
     }
 }

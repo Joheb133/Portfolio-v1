@@ -36,9 +36,9 @@ function App() {
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ol>
-                    <button className='bg-white rounded-full m-[2px] w-[112px] h-[52px]'>
+                    <a className='bg-white text-black rounded-full m-[2px] w-[112px] h-[52px] flex items-center justify-center'>
                         CV
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -51,9 +51,9 @@ function App() {
                 <p className='max-w-lg text-center text-light my-4'>
                     I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatment.
                 </p>
-                <button>
+                <a className='custom-button'>
                     Get In Touch
-                </button>
+                </a>
             </section>
 
             <section className='h-[884px] flex justify-center items-center'>

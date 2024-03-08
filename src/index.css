@@ -5,8 +5,21 @@
 @layer components{
     .navbar {
         @apply sticky left-1/2 -translate-x-1/2 
-        flex items-center justify-center 
-        rounded-full w-[564px] h-[48px] mt-5
-        bg-[#252525] opacity-25 backdrop-blur-sm 
+        flex items-center justify-center
+        rounded-full w-fit mt-5
+        bg-[#000000] bg-opacity-50 backdrop-blur-sm 
+    }
+
+    .navbar .links {
+        counter-reset: navLinkCount;
+    }
+
+    .navbar .links li::before {
+        content: "0" counter(navLinkCount) ".";
+        counter-increment: navLinkCount;
+        color: #00D42F;
+        font-family: monospace;
+        font-size: 16px;
+        margin-right: 2px;
     }
 }

@@ -3,11 +3,16 @@
 @tailwind utilities;
 
 @layer components{
+    body {
+        counter-reset: headingCount;
+    }
+
     nav {
         @apply fixed left-1/2 -translate-x-1/2 
         flex items-center justify-center
         rounded-full w-fit mt-5
         bg-[#252525] bg-opacity-70 backdrop-blur-sm 
+        z-50
     }
 
     nav .links {
@@ -29,10 +34,16 @@
     }
 
     .section-title::before {
-        counter-increment: headingCount;
         content: counter(headingCount) ". ";
+        counter-increment: headingCount;
         color: #00D42F;
         font-family: monospace;
         font-size: 36px;
+    }
+
+    .project-card-icon {
+        @apply text-[#BABABB] 
+        hover:text-brand-primary transition-colors duration-300 ease-in-out
+        hover:cursor-pointer
     }
 }

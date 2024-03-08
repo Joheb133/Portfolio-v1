@@ -1,7 +1,30 @@
-import './index.css'
 import profilePic from './assets/image.png'
+import av from './assets/portfolio-imgs/av.png'
+import starG from './assets/portfolio-imgs/star-g.png'
+import whiteR from './assets/portfolio-imgs/white-raf.png'
+import ProjectCard from './components/ProjectCard'
 
 function App() {
+    const projects = [
+        {
+            title: 'Audio Visualiser 1.0',
+            description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
+            techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
+            imgPath: av
+        },
+        {
+            title: 'Stargazing',
+            description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
+            techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
+            imgPath: starG
+        },
+        {
+            title: 'Audio Visualiser 1.0',
+            description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
+            techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
+            imgPath: whiteR
+        }
+    ]
 
     return (
         <>
@@ -50,6 +73,30 @@ function App() {
                     </div>
                 </div>
             </section>
+
+            <section className='bg-neutral-100'>
+                <div className='flex flex-col gap-10 py-10 items-center'>
+                    <h1 className='section-title'>Stuff I've Made</h1>
+                    {projects.map((project, index) => (
+                        <ProjectCard
+                            title={project.title}
+                            description={project.description}
+                            techs={project.techs}
+                            imgPath={project.imgPath}
+                            key={index}
+                            index={index} />
+                    ))}
+                </div>
+            </section>
+
+            <footer className='flex items-center justify-center py-16'>
+                <div className='bg-black rounded-2xl w-[622px] text-white p-5'>
+                    <h1 className='section-title'>Get In Touch</h1>
+                    <p>
+                        Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+                    </p>
+                </div>
+            </footer>
         </>
     )
 }

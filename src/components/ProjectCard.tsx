@@ -33,8 +33,8 @@ export default function ProjectCard({ title, description, techs, imgPath, index 
                         {dirLeft ? <BsArrowLeft size={32} /> : <BsArrowRight size={32} />}
                     </div>
                     <div className='flex items-center gap-4'>
-                        <FiGithub size={24} className='project-card-icon' />
-                        <LuExternalLink size={24} className='project-card-icon' />
+                        <FiGithub size={24} className='icon' />
+                        <LuExternalLink size={24} className='icon' />
                     </div>
                 </div>
             </div>

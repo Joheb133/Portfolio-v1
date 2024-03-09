@@ -7,17 +7,15 @@
 }
 
 html {
+    counter-reset: headingCount;
     scroll-behavior: smooth;
 }
 
-body {
-    counter-reset: headingCount;
-}
-
 .custom-button {
+    min-width: 147px;
+    text-align: center;
     user-select: none;
     color: var(--brand-primary);
-    border: solid 1px white;
     padding: 12px;
     border-radius: 10px;
     font-family: monospace;
@@ -25,13 +23,26 @@ body {
     position: relative;
     z-index: 1;
     cursor: pointer;
+}
+
+.dark-button {
+    border: solid 1px white;
+    background: black;
     box-shadow:
         7px 7px 0 0px rgb(0, 0, 0),
         7px 7px 0 1px rgb(255, 255, 255);
 }
 
+.light-button {
+    border: solid 1px black;
+    background: rgb(255, 255, 255);
+    box-shadow:
+        7px 7px 0 0px rgb(255, 255, 255),
+        7px 7px 0 1px rgb(0, 0, 0);
+}
+
 .custom-button:active {
-    transform: translate(7px, 7px);
+    transform: translate(8px, 8px);
     box-shadow: none;
 }
 
@@ -89,7 +100,7 @@ body {
         font-size: 36px;
     }
 
-    .project-card-icon {
-        @apply text-[#BABABB] cursor-pointer hover:text-brand-primary transition-colors duration-300 ease-in-out
+    .icon {
+        @apply text-[#BABABB] cursor-pointer hover:text-brand-primary transition-colors duration-200 ease-in-out
     }
 }

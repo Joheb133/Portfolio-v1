@@ -44,12 +44,12 @@ function App() {
                 </div>
             </div>
 
-            <section id='landing' className='h-[800px] bg-black text-[#969696] gap-3 text-center flex flex-col justify-center items-center px-2'>
+            <section id='landing' className='relative h-[800px] bg-black text-[#969696] gap-3 text-center flex flex-col justify-center items-center px-2'>
                 <div className='font-bold'>
-                    <span className='text-7xl max-xl:text-5xl text-white'>Hi, I'm </span>
-                    <h1 className='text-brand-primary font-mono text-[78px] max-xl:text-[54px] inline-block'>Joheb</h1>
+                    <span className='text-7xl max-lg:text-5xl text-white'>Hi, I'm </span>
+                    <h1 className='text-brand-primary font-mono text-[78px] max-lg:text-[54px] inline-block'>Joheb</h1>
                 </div>
-                <h1 className='text-7xl max-xl:text-5xl font-bold'>I build things for the web</h1>
+                <h1 className='text-7xl max-lg:text-5xl font-bold'>I build things for the web</h1>
                 <p className='max-w-lg my-4'>
                     I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatment.
                 </p>
@@ -58,10 +58,10 @@ function App() {
                 </a>
             </section>
 
-            <section className='h-[884px] bg-white flex justify-center items-center px-2'>
-                <div className='flex gap-12 max-xl:flex-col'>
-                    <div className='max-w-lg px-4 py-8 bg-neutral-100 rounded-2xl'>
-                        <h1 className='section-title' id='about'>About Me</h1>
+            <section id='about' className='my-20 bg-white flex justify-center items-center px-2'>
+                <div className='flex gap-12 max-lg:flex-col'>
+                    <div className='max-w-lg px-8 pb-12 pt-2 bg-neutral-100 rounded-2xl'>
+                        <h1 className='section-title my-8'>About Me</h1>
                         <p>
                             Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
                         </p>
@@ -69,8 +69,20 @@ function App() {
                         <p>
                             Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio.
                         </p>
+                        <br />
+                        <div className='skills'>
+                            <p>Here are a few technologies I’ve been working with recently:</p><br />
+                            <ul className='grid grid-cols-2 list-disc list-inside text-sm'>
+                                <li>JavaScript</li>
+                                <li>TypeScript</li>
+                                <li>React</li>
+                                <li>Azure Functions</li>
+                                <li>Vercel Serverless</li>
+                                <li>Chrome Extension API</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className='relative xl:w-[348px] max-xl:h-[288px]'>
+                    <div className='relative lg:w-[348px] max-lg:h-[288px]'>
                         <img src={profilePic} alt="A picture of myself" className='w-[256px] h-[256px] rounded-2xl absolute bottom-0 translate-x-1/2 right-1/2' />
                     </div>
                 </div>
@@ -98,7 +110,7 @@ function App() {
                         Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
                     </p>
                 </div>
-                <div className='flex gap-8'>
+                <div className='flex gap-8 max-ss:flex-col'>
                     <a className='custom-button light-button'>Email Me!</a>
                     <a className='custom-button light-button'>My CV</a>
                 </div>

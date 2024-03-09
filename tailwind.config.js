@@ -8,6 +8,10 @@ export default {
         extend: {
             colors: {
                 'brand-primary': '#00D42F'
+            },
+            screens: {
+                'ss': '374px',
+                'lg': '1080px'
             }
         },
     },

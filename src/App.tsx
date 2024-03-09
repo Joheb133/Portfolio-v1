@@ -29,7 +29,7 @@ function App() {
     ]
 
     return (
-        <>
+        <div>
             <div className='navbar'>
                 <a href="#landing" className='text-brand-primary text-4xl font-mono font-bold mx-8'>J</a>
                 <div className='flex items-center justify-center gap-6'>
@@ -44,13 +44,13 @@ function App() {
                 </div>
             </div>
 
-            <section id='landing' className='h-[800px] bg-black text-[#969696] flex flex-col justify-center items-center'>
+            <section id='landing' className='h-[800px] bg-black text-[#969696] gap-3 text-center flex flex-col justify-center items-center px-2'>
                 <div className='font-bold'>
-                    <span className='text-7xl text-white'>Hi, I'm </span>
-                    <h1 className='text-brand-primary font-mono text-[78px] inline-block'>Joheb</h1>
+                    <span className='text-7xl max-xl:text-5xl text-white'>Hi, I'm </span>
+                    <h1 className='text-brand-primary font-mono text-[78px] max-xl:text-[54px] inline-block'>Joheb</h1>
                 </div>
-                <h1 className='text-7xl font-bold'>I build things for the web</h1>
-                <p className='max-w-lg text-center my-4'>
+                <h1 className='text-7xl max-xl:text-5xl font-bold'>I build things for the web</h1>
+                <p className='max-w-lg my-4'>
                     I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatment.
                 </p>
                 <a className='custom-button dark-button'>
@@ -58,8 +58,8 @@ function App() {
                 </a>
             </section>
 
-            <section className='h-[884px] bg-white flex justify-center items-center'>
-                <div className='flex gap-12'>
+            <section className='h-[884px] bg-white flex justify-center items-center px-2'>
+                <div className='flex gap-12 max-xl:flex-col'>
                     <div className='max-w-lg px-4 py-8 bg-neutral-100 rounded-2xl'>
                         <h1 className='section-title' id='about'>About Me</h1>
                         <p>
@@ -70,13 +70,13 @@ function App() {
                             Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio.
                         </p>
                     </div>
-                    <div className='relative w-[348px]'>
+                    <div className='relative xl:w-[348px] max-xl:h-[288px]'>
                         <img src={profilePic} alt="A picture of myself" className='w-[256px] h-[256px] rounded-2xl absolute bottom-0 translate-x-1/2 right-1/2' />
                     </div>
                 </div>
             </section>
 
-            <section id='projects' className='bg-neutral-100'>
+            <section id='projects' className='bg-neutral-100 px-2'>
                 <div className='flex flex-col gap-10 py-10 items-center'>
                     <h1 className='section-title'>Stuff I've Made</h1>
                     {projects.map((project, index) => (
@@ -91,10 +91,10 @@ function App() {
                 </div>
             </section>
 
-            <footer id='contact' className='bg-white flex flex-col gap-8 items-center justify-center py-16'>
-                <div className='bg-black rounded-2xl w-[622px] text-white p-6'>
-                    <h1 className='section-title mb-4'>Get In Touch</h1>
-                    <p className='text-light'>
+            <footer id='contact' className='bg-white flex flex-col gap-8 items-center justify-center py-16 px-2'>
+                <div className='bg-black rounded-2xl max-w-[622px] p-6'>
+                    <h1 className='section-title mb-4 text-white'>Get In Touch</h1>
+                    <p className='text-[#cfcfcf]'>
                         Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
                     </p>
                 </div>
@@ -107,7 +107,7 @@ function App() {
                     <LuExternalLink size={24} className='icon' />
                 </div>
             </footer>
-        </>
+        </div>
     )
 }
 

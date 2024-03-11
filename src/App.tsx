@@ -45,7 +45,7 @@ function App() {
             </div>
 
             <section id='landing' className='relative h-[800px] bg-black text-[#969696] px-2 overflow-hidden'>
-                <div className='absolute w-full h-full text-center flex flex-col justify-center items-center gap-3 z-50'>
+                <div className='absolute w-full h-full text-center flex flex-col justify-center items-center gap-3 z-10'>
                     <div className='font-bold'>
                         <span className='text-7xl max-lg:text-5xl text-white'>Hi, I'm </span>
                         <h1 className='text-brand-primary font-mono text-[78px] max-lg:text-[54px] inline-block'>Joheb</h1>
@@ -58,7 +58,7 @@ function App() {
                         Get In Touch
                     </a>
                 </div>
-                <div className='absolute top-0 left-0 max-w-[2064px] min-w-[1486px] w-full h-full overflow-hidden z-0'>
+                <div className='absolute top-0 left-0 max-w-[2064px] min-w-[1486px] w-full h-full overflow-hidden z-0 blur-[1px]'>
                     <svg width={200} height={200} viewBox='0 0 100 100' className='absolute bottom-0 rotate-3 translate-x-4 translate-y-10'>
                         <rect x='0' y='0' width='100' height='100' rx='8' fill='#1A1A1A' />
                     </svg>

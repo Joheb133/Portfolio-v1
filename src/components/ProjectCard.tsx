@@ -9,10 +9,12 @@ interface ProjectCard {
     description: string
     techs: Array<string>
     imgPath: string
+    githubLink: string | null
+    deploymentLink: string | null
     index: number
 }
 
-export default function ProjectCard({ title, description, techs, imgPath, index }: ProjectCard) {
+export default function ProjectCard({ title, description, techs, imgPath, githubLink, deploymentLink, index }: ProjectCard) {
     const dirLeft = index % 2 === 0;
 
     return (
@@ -33,8 +35,8 @@ export default function ProjectCard({ title, description, techs, imgPath, index 
                         {<BsArrowLeft size={32} />}
                     </div>
                     <div className='flex items-center gap-4'>
-                        <FiGithub size={24} className='icon' />
-                        <LuExternalLink size={24} className='icon' />
+                        {githubLink !== null ? <a href={githubLink} target="_blank"><FiGithub size={24} className='icon' /></a> : ''}
+                        {deploymentLink !== null ? <a href={deploymentLink} target="_blank"><LuExternalLink href={deploymentLink} size={24} className='icon' /></a> : ''}
                     </div>
                 </div>
             </div>

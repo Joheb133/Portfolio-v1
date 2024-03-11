@@ -12,19 +12,25 @@ function App() {
             title: 'Audio Visualiser 1.0',
             description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
             techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
-            imgPath: av
+            imgPath: av,
+            githubLink: 'https://github.com/Joheb133/Audio-Visual-2',
+            deploymentLink: null
         },
         {
             title: 'Stargazing',
             description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
             techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
-            imgPath: starG
+            imgPath: starG,
+            githubLink: null,
+            deploymentLink: null
         },
         {
             title: 'Audio Visualiser 1.0',
             description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
             techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
-            imgPath: whiteR
+            imgPath: whiteR,
+            githubLink: null,
+            deploymentLink: null
         }
     ]
 
@@ -113,6 +119,8 @@ function App() {
                             description={project.description}
                             techs={project.techs}
                             imgPath={project.imgPath}
+                            githubLink={project.githubLink}
+                            deploymentLink={project.deploymentLink}
                             key={index}
                             index={index} />
                     ))}

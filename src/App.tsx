@@ -44,18 +44,34 @@ function App() {
                 </div>
             </div>
 
-            <section id='landing' className='relative h-[800px] bg-black text-[#969696] gap-3 text-center flex flex-col justify-center items-center px-2'>
-                <div className='font-bold'>
-                    <span className='text-7xl max-lg:text-5xl text-white'>Hi, I'm </span>
-                    <h1 className='text-brand-primary font-mono text-[78px] max-lg:text-[54px] inline-block'>Joheb</h1>
+            <section id='landing' className='relative h-[800px] bg-black text-[#969696] px-2'>
+                <div className='absolute w-full h-full text-center flex flex-col justify-center items-center gap-3 z-50'>
+                    <div className='font-bold'>
+                        <span className='text-7xl max-lg:text-5xl text-white'>Hi, I'm </span>
+                        <h1 className='text-brand-primary font-mono text-[78px] max-lg:text-[54px] inline-block'>Joheb</h1>
+                    </div>
+                    <h1 className='text-7xl max-lg:text-5xl font-bold'>I build things for the web</h1>
+                    <p className='max-w-lg my-4'>
+                        I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatment.
+                    </p>
+                    <a className='custom-button dark-button'>
+                        Get In Touch
+                    </a>
                 </div>
-                <h1 className='text-7xl max-lg:text-5xl font-bold'>I build things for the web</h1>
-                <p className='max-w-lg my-4'>
-                    I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatment.
-                </p>
-                <a className='custom-button dark-button'>
-                    Get In Touch
-                </a>
+                <div className='absolute top-0 left-0 w-[2064px] h-full overflow-hidden z-0'>
+                    <svg width={200} height={200} viewBox='0 0 100 100' className='absolute bottom-0 rotate-3 translate-x-4 translate-y-10'>
+                        <rect x='0' y='0' width='100' height='100' rx='8' fill='#1A1A1A' />
+                    </svg>
+                    <svg width={160} height={160} viewBox='0 0 100 100' className='absolute bottom-1/2 -rotate-12 translate-x-80 translate-y-10'>
+                        <rect x='0' y='0' width='100' height='100' rx='8' fill='#151515' />
+                    </svg>
+                    <svg width={120} height={120} viewBox='0 0 100 100' className='absolute bottom-1/2 right-1/3 rotate-45 translate-x-52 translate-y-28'>
+                        <rect x='0' y='0' width='100' height='100' rx='8' fill='#131313' />
+                    </svg>
+                    <svg width={200} height={200} viewBox='0 0 100 100' className='absolute bottom-1/2 right-0 rotate-12 -translate-x-5 translate-y-10'>
+                        <rect x='0' y='0' width='100' height='100' rx='8' fill='#1A1A1A' />
+                    </svg>
+                </div>
             </section>
 
             <section id='about' className='my-20 bg-white flex justify-center items-center px-2'>

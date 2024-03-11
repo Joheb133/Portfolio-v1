@@ -4,7 +4,8 @@ import starG from './assets/portfolio-imgs/star-g.png'
 import whiteR from './assets/portfolio-imgs/white-raf.png'
 import ProjectCard from './components/ProjectCard'
 import { FiGithub } from "react-icons/fi";
-import { LuExternalLink } from "react-icons/lu";
+import { TbBrandLinkedin } from "react-icons/tb";
+import { useState } from 'react'
 
 function App() {
     const projects = [
@@ -33,20 +34,27 @@ function App() {
             deploymentLink: null
         }
     ]
+    const [showLinks, setShowLinks] = useState(false)
 
     return (
-        <div>
+        <div onClick={() => { !showLinks || setShowLinks(false) }}>
             <div className='navbar'>
                 <a href="#landing" className='text-brand-primary text-4xl font-mono font-bold mx-8'>J</a>
-                <div className='flex items-center justify-center gap-6'>
-                    <ol className='links text-white flex justify-between gap-4'>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ol>
-                    <a className='bg-white text-black rounded-full m-[2px] w-[112px] h-[52px] flex items-center justify-center'>
-                        CV
-                    </a>
+                <div className='md:relative'>
+                    <div className={`md:long ${showLinks ? 'max-md:small' : 'hidden'}`}>
+                        <ol className='links'>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ol>
+                        <a className='bg-white text-black rounded-full m-[2px] md:w-[112px] h-[52px] flex items-center justify-center'>
+                            CV
+                        </a>
+                    </div>
+                    <button className='md:hidden m-[2px] w-[112px] h-[52px] text-white rounded-full hover:bg-neutral-800 transition-all'
+                        onClick={() => { setShowLinks(!showLinks) }}>
+                        Menu
+                    </button>
                 </div>
             </div>
 
@@ -138,9 +146,13 @@ function App() {
                     <a className='custom-button light-button'>Email Me!</a>
                     <a className='custom-button light-button'>My CV</a>
                 </div>
-                <div className='flex gap-2'>
-                    <FiGithub size={24} className='icon' />
-                    <LuExternalLink size={24} className='icon' />
+                <div className='flex gap-2 items-center'>
+                    <a href='https://github.com/Joheb133' target='_blank'>
+                        <FiGithub size={24} className='icon' />
+                    </a>
+                    <a href='https://www.linkedin.com/in/zoheb-saiyed/' target='_blank'>
+                        <TbBrandLinkedin size={30} className='icon' />
+                    </a>
                 </div>
             </footer>
         </div>

@@ -63,15 +63,50 @@ html {
         background: rgba(37, 37, 37, 0.7);
         backdrop-filter: blur(5px);
         z-index: -1;
+        border-radius: 999px;
     }
 
     .navbar {
-        @apply fixed left-1/2 -translate-x-1/2 flex items-center justify-center rounded-full w-fit mt-5 z-20 overflow-hidden
+        @apply fixed left-1/2 -translate-x-1/2 flex items-center justify-center rounded-full w-fit mt-5 z-20
     }
 
     .navbar .links {
         opacity: 1;
         counter-reset: navLinkCount;
+        color: white;
+        display: flex;
+        gap: 16px;
+    }
+
+    .navbar .long {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .navbar .small {
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transform: translate(0, 40px);
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: rgba(37, 37, 37, 0.7);
+        backdrop-filter: blur(5px);
+        gap: 8px;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .navbar .small ol {
+        flex-direction: column;
+    }
+
+    .navbar .small a {
+        width: 100%;
     }
 
     .navbar .links a::before {

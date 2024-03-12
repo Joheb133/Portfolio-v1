@@ -12,6 +12,15 @@ export default {
             screens: {
                 'ss': '374px',
                 'lg': '1080px'
+            },
+            animation: {
+                'fade-in-up': 'fadeInUp 300ms ease-out forwards'
+            },
+            keyframes: {
+                fadeInUp: {
+                    from: { opacity: 0, transform: 'translateY(25%)' },
+                    to: { opacity: 1, transform: 'translateY(0)' }
+                }
             }
         },
     },

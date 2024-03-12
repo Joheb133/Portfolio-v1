@@ -59,16 +59,16 @@ function App() {
             </div>
 
             <section id='landing' className='relative h-[800px] bg-black text-[#969696] px-2 overflow-hidden'>
-                <div className='absolute w-full h-full text-center flex flex-col justify-center items-center gap-3 z-10'>
-                    <div className='font-bold'>
+                <div className='absolute left-0 w-full h-full text-center flex flex-col justify-center items-center gap-3 z-10'>
+                    <div className='font-bold animate-fade-in-up' style={{ opacity: 0 }}>
                         <span className='text-7xl max-lg:text-5xl text-white'>Hi, I'm </span>
                         <h1 className='text-brand-primary font-mono text-[78px] max-lg:text-[54px] inline-block'>Joheb</h1>
                     </div>
-                    <h1 className='text-7xl max-lg:text-5xl font-bold'>I build things for the web</h1>
-                    <p className='max-w-lg my-4'>
+                    <h1 className='text-7xl max-lg:text-5xl font-bold animate-fade-in-up' style={{ animationDelay: '200ms', opacity: 0 }}>I build things for the web</h1>
+                    <p className='max-w-lg my-4 animate-fade-in-up' style={{ animationDelay: '250ms', opacity: 0 }}>
                         I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatment.
                     </p>
-                    <a className='custom-button dark-button'>
+                    <a className='custom-button dark-button animate-fade-in-up' style={{ animationDelay: '400ms', opacity: 0 }}>
                         Get In Touch
                     </a>
                 </div>

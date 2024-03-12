@@ -99,6 +99,20 @@ html {
         gap: 8px;
         align-items: center;
         padding: 8px;
+        animation: openMenu 300ms ease-in-out forwards;
+    }
+
+    @keyframes openMenu {
+        from {
+            scale: 0;
+            opacity: 0;
+            transform-origin: center;
+        }
+
+        to {
+            scale: 1;
+            opacity: 1;
+        }
     }
 
     .navbar .small ol {

@@ -103,10 +103,18 @@ html {
 
     .navbar .small ol {
         flex-direction: column;
+        gap: 8px;
     }
 
     .navbar .small a {
         width: 100%;
+    }
+
+    .navbar .small li {
+        width: 100%;
+        padding: 8px 48px;
+        border-radius: 8px;
+        background-color: rgba(12, 12, 12, 0.7);
     }
 
     .navbar .links a::before {

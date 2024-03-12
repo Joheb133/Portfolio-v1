@@ -1,43 +1,22 @@
 import profilePic from './assets/image.png'
-import av from './assets/portfolio-imgs/av.png'
-import starG from './assets/portfolio-imgs/star-g.png'
-import whiteR from './assets/portfolio-imgs/white-raf.png'
 import ProjectCard from './components/ProjectCard'
 import { FiGithub } from "react-icons/fi";
 import { TbBrandLinkedin } from "react-icons/tb";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useInView } from "react-intersection-observer";
+import projects from './projects';
 
 function App() {
-    const projects = [
-        {
-            title: 'Audio Visualiser 1.0',
-            description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
-            techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
-            imgPath: av,
-            githubLink: 'https://github.com/Joheb133/Audio-Visual-2',
-            deploymentLink: null
-        },
-        {
-            title: 'Stargazing',
-            description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
-            techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
-            imgPath: starG,
-            githubLink: null,
-            deploymentLink: null
-        },
-        {
-            title: 'Audio Visualiser 1.0',
-            description: 'React Denmark Map is a library for React that allows developers to display an SVG of Denmark. It can be programmatically customized through an intuitive API.',
-            techs: ['React', 'Tailwind', 'Vercel Serverless', 'TypeScript'],
-            imgPath: whiteR,
-            githubLink: null,
-            deploymentLink: null
-        }
-    ]
     const [showLinks, setShowLinks] = useState(false)
     const [aboutRef, aboutInView] = useInView({
         triggerOnce: true
+    })
+    const [projectRef, projectInView] = useInView({
+        triggerOnce: true
+    })
+    const [contactRef, contactInView] = useInView({
+        triggerOnce: false,
+        threshold: 0.5
     })
 
     return (
@@ -122,9 +101,9 @@ function App() {
                 </div>
             </section>
 
-            <section id='projects' className='bg-neutral-100 px-2'>
+            <section ref={projectRef} id='projects' className='bg-neutral-100 px-2'>
                 <div className='flex flex-col gap-10 py-10 items-center'>
-                    <h1 className='section-title'>Stuff I've Made</h1>
+                    <h1 className={`section-title opacity-0 ${projectInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '500ms' }}>Stuff I've Made</h1>
                     {projects.map((project, index) => (
                         <ProjectCard
                             title={project.title}
@@ -140,18 +119,18 @@ function App() {
                 </div>
             </section>
 
-            <footer id='contact' className='bg-white flex flex-col gap-8 items-center justify-center py-16 px-2'>
-                <div className='bg-black rounded-2xl max-w-[622px] p-6'>
+            <footer ref={contactRef} id='contact' className='bg-white flex flex-col gap-8 items-center justify-center py-16 px-2'>
+                <div className={`bg-black rounded-2xl max-w-[622px] p-6 opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`}>
                     <h1 className='section-title mb-4 text-white'>Get In Touch</h1>
                     <p className='text-[#cfcfcf]'>
                         Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
                     </p>
                 </div>
                 <div className='flex gap-8 max-ss:flex-col'>
-                    <a className='custom-button light-button'>Email Me!</a>
-                    <a className='custom-button light-button'>My CV</a>
+                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '200ms' }}>Email Me!</a>
+                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms' }}>My CV</a>
                 </div>
-                <div className='flex gap-2 items-center'>
+                <div className={`flex gap-2 items-center opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '400ms' }}>
                     <a href='https://github.com/Joheb133' target='_blank'>
                         <FiGithub size={24} className='icon' />
                     </a>

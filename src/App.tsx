@@ -5,7 +5,8 @@ import whiteR from './assets/portfolio-imgs/white-raf.png'
 import ProjectCard from './components/ProjectCard'
 import { FiGithub } from "react-icons/fi";
 import { TbBrandLinkedin } from "react-icons/tb";
-import { useState } from 'react'
+import { useState } from 'react';
+import { useInView } from "react-intersection-observer";
 
 function App() {
     const projects = [
@@ -35,6 +36,9 @@ function App() {
         }
     ]
     const [showLinks, setShowLinks] = useState(false)
+    const [aboutRef, aboutInView] = useInView({
+        triggerOnce: true
+    })
 
     return (
         <div onClick={() => { !showLinks || setShowLinks(false) }}>
@@ -88,7 +92,7 @@ function App() {
                 </div>
             </section>
 
-            <section id='about' className='my-20 bg-white flex justify-center items-center px-2'>
+            <section ref={aboutRef} id='about' className={`my-20 bg-white flex justify-center items-center px-2 opacity-0 ${aboutInView ? 'animate-sm-fade-in-up' : ''}`}>
                 <div className='flex gap-12 max-lg:flex-col'>
                     <div className='max-w-lg px-8 pb-12 pt-2 bg-neutral-100 rounded-2xl'>
                         <h1 className='section-title my-8'>About Me</h1>
@@ -130,7 +134,8 @@ function App() {
                             githubLink={project.githubLink}
                             deploymentLink={project.deploymentLink}
                             key={index}
-                            index={index} />
+                            index={index}
+                        />
                     ))}
                 </div>
             </section>

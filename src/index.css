@@ -67,7 +67,7 @@ html {
     }
 
     .navbar {
-        @apply fixed left-1/2 -translate-x-1/2 flex items-center justify-center rounded-full max-w-[492px] mt-5 z-20
+        @apply fixed left-1/2 -translate-x-1/2 flex items-center justify-center rounded-full max-w-fit mt-5 z-20
     }
 
     .navbar .links {

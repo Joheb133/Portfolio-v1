@@ -70,6 +70,25 @@ html {
         @apply fixed left-1/2 -translate-x-1/2 flex items-center justify-center rounded-full max-w-fit mt-5 z-20
     }
 
+    @keyframes scaleIn {
+        0% {
+            scale: 0;
+        }
+
+        65% {
+            scale: 1.1
+        }
+
+        100% {
+            scale: 1;
+        }
+    }
+
+    .navbar {
+        transform-origin: top left;
+        animation: scaleIn 300ms ease-out;
+    }
+
     .navbar .links {
         opacity: 1;
         counter-reset: navLinkCount;

@@ -2,7 +2,7 @@ import profilePic from './assets/image.png'
 import ProjectCard from './components/ProjectCard'
 import { FiGithub } from "react-icons/fi";
 import { TbBrandLinkedin } from "react-icons/tb";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useInView } from "react-intersection-observer";
 import projects from './projects';
 
@@ -15,7 +15,7 @@ function App() {
         triggerOnce: true
     })
     const [contactRef, contactInView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.5
     })
 

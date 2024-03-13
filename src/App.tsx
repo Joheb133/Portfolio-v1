@@ -19,6 +19,13 @@ function App() {
         threshold: 0.5
     })
 
+    const handleAnimationEnd = (event: React.AnimationEvent<HTMLAnchorElement>, animationClass: string[]) => {
+        const element = event.target as HTMLElement;
+
+        animationClass.forEach((className) => { element.classList.remove(className) })
+
+    }
+
     return (
         <div onClick={() => { !showLinks || setShowLinks(false) }}>
             <div className='navbar'>
@@ -41,17 +48,17 @@ function App() {
                 </div>
             </div>
 
-            <section id='landing' className='relative h-[800px] bg-black text-[#969696] px-2 overflow-hidden'>
+            <section id='landing' className='relative max-h-[800px] h-svh bg-black text-[#969696] px-2 overflow-hidden'>
                 <div className='absolute left-0 w-full h-full text-center flex flex-col justify-center items-center gap-3 z-10'>
                     <div className='font-bold animate-fade-in-up' style={{ opacity: 0 }}>
-                        <span className='text-7xl max-lg:text-5xl text-white'>Hi, I'm </span>
+                        <span className='text-7xl max-lg:text-5xl text-white'>Hey, I'm </span>
                         <h1 className='text-brand-primary font-mono text-[78px] max-lg:text-[54px] inline-block'>Joheb</h1>
                     </div>
-                    <h1 className='text-7xl max-lg:text-5xl font-bold animate-fade-in-up' style={{ animationDelay: '200ms', opacity: 0 }}>I build things for the web</h1>
-                    <p className='max-w-lg my-4 animate-fade-in-up' style={{ animationDelay: '250ms', opacity: 0 }}>
-                        I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatment.
+                    <h1 className='text-7xl max-lg:text-5xl font-bold animate-fade-in-up' style={{ animationDelay: '200ms', opacity: 0 }}>I build web projects</h1>
+                    <p className='max-w-lg my-4 mx-1 animate-fade-in-up' style={{ animationDelay: '250ms', opacity: 0 }}>
+                        I'm a passionate fullstack web developer based in Dublin, Ireland, eager to tackle projects that challenge me and contribute to a collaborative team environment. I'm currently seeking opportunities to leverage my skills and grow as a software engineer.
                     </p>
-                    <a className='custom-button dark-button animate-fade-in-up' style={{ animationDelay: '400ms', opacity: 0 }}>
+                    <a className='custom-button dark-button opacity-0 animate-fade-in-up' style={{ animationDelay: '400ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])} href='mailto:joheb133@gmail.com'>
                         Get In Touch
                     </a>
                 </div>
@@ -127,8 +134,8 @@ function App() {
                     </p>
                 </div>
                 <div className='flex gap-8 max-ss:flex-col'>
-                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '200ms' }}>Email Me!</a>
-                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms' }}>My CV</a>
+                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '200ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])}>Email Me!</a>
+                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])}>My CV</a>
                 </div>
                 <div className={`flex gap-2 items-center opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '400ms' }}>
                     <a href='https://github.com/Joheb133' target='_blank'>

@@ -15,7 +15,7 @@ export default {
             },
             animation: {
                 'sm-fade-in-up': 'smFadeInUp 400ms ease-out forwards',
-                'fade-in-up': 'fadeInUp 300ms ease-out forwards',
+                'fade-in-up': 'fadeInUp 500ms ease-out forwards',
                 'fade-in-down': 'fadeInDown 300ms ease-out forwards',
                 'full-fade-in-down': 'fullFadeInDown 400ms ease-out forwards'
             },

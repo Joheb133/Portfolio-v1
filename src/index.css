@@ -39,7 +39,7 @@ html {
     background: rgb(255, 255, 255);
     box-shadow:
         7px 7px 0 0px rgb(255, 255, 255),
-        7px 7px 0 1px rgb(0, 0, 0);
+        7px 7px 0 0.85px rgb(0, 0, 0);
 }
 
 .custom-button:active {
@@ -86,7 +86,7 @@ html {
 
     .navbar {
         transform-origin: top left;
-        animation: scaleIn 300ms ease-out;
+        animation: scaleIn 400ms ease-out;
     }
 
     .navbar .links {

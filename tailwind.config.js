@@ -14,8 +14,8 @@ export default {
                 'lg': '1080px'
             },
             animation: {
-                'sm-fade-in-up': 'smFadeInUp 400ms ease-out forwards',
-                'fade-in-up': 'fadeInUp 500ms ease-out forwards',
+                'sm-fade-in-up': 'smFadeInUp 400ms 300ms ease-out forwards',
+                'fade-in-up': 'fadeInUp 500ms 300ms ease-out forwards',
                 'fade-in-down': 'fadeInDown 300ms ease-out forwards',
                 'full-fade-in-down': 'fullFadeInDown 400ms ease-out forwards'
             },

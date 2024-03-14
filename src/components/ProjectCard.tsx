@@ -8,12 +8,13 @@ interface ProjectCard {
     description: string
     techs: Array<string>
     imgPath: string
+    videoPath: string
     githubLink: string | null
     deploymentLink: string | null
     index: number
 }
 
-export default function ProjectCard({ title, description, techs, imgPath, githubLink, deploymentLink, index }: ProjectCard) {
+export default function ProjectCard({ title, description, techs, imgPath, videoPath, githubLink, deploymentLink, index }: ProjectCard) {
     const dirLeft = index % 2 === 0;
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -22,8 +23,10 @@ export default function ProjectCard({ title, description, techs, imgPath, github
 
     return (
         <div ref={ref} className={`flex gap-10 ${dirLeft || 'lg:flex-row-reverse'} max-lg:flex-col justify-center`}>
-            <div className={`rounded-2xl overflow-hidden max-w-[576px] aspect-video opacity-0 ${inView ? 'animate-sm-fade-in-up' : ''}`} style={{ animationDelay: '200ms' }}>
-                <img src={imgPath} alt={title} className='w-full h-full' />
+            <div className={`rounded-2xl overflow-hidden max-w-[576px] opacity-0 ${inView ? 'animate-sm-fade-in-up' : ''}`} style={{ animationDelay: '200ms' }}>
+                <video className="w-full h-full" muted={true} loop={true} poster={imgPath} autoPlay={true}>
+                    <source src={videoPath} type="video/webm" />
+                </video>
             </div>
             <div className={`p-5 lg:max-w-[420px] max-w-[576px] flex flex-col justify-center gap-5 bg-neutral-200 rounded-2xl opacity-0  ${dirLeft ? 'lg:text-right' : 'lg:text-left'} ${inView ? 'animate-sm-fade-in-up' : ''}`} style={{ animationDelay: '400ms' }}>
                 <h3 className='text-2xl'>{title}</h3>

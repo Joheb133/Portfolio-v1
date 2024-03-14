@@ -11,6 +11,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: "Inter", sans-serif;
+}
+
 .custom-button {
     min-width: 147px;
     text-align: center;

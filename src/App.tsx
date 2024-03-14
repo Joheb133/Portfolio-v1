@@ -1,4 +1,4 @@
-import profilePic from './assets/image.png'
+import profilePic from './assets/image.jpg'
 import ProjectCard from './components/ProjectCard'
 import { FiGithub } from "react-icons/fi";
 import { TbBrandLinkedin } from "react-icons/tb";
@@ -9,7 +9,8 @@ import projects from './projects';
 function App() {
     const [showLinks, setShowLinks] = useState(false)
     const [aboutRef, aboutInView] = useInView({
-        triggerOnce: true
+        triggerOnce: true,
+        threshold: 0.5
     })
     const [projectRef, projectInView] = useInView({
         triggerOnce: true
@@ -83,15 +84,19 @@ function App() {
                     <div className='max-w-lg px-8 pb-12 pt-2 bg-neutral-100 rounded-2xl'>
                         <h1 className='section-title my-8'>About Me</h1>
                         <p>
-                            Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+                            Hey! I'm Zoheb (pronounced 'Joe-heb,' – weird, I know), a 21-year-old computing student. My passion for coding ignited during my Leaving Cert programming classes, and I'm now in my second year of University studying computing.
                         </p>
                         <br />
                         <p>
-                            Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio.
+                            While university has honed soft skills like teamwork, time management and, I'm always tinkering with personal projects to level up my coding skills.
+                        </p>
+                        <br />
+                        <p>
+                            Of course, even coders need a break!  When I'm not coding or studying, you might find me reading, lost in an audiobook, or playing a video game.
                         </p>
                         <br />
                         <div className='skills'>
-                            <p>Here are a few technologies I’ve been working with recently:</p><br />
+                            <p>Here are a some technologies I've recently worked with:</p><br />
                             <ul className='grid grid-cols-2 list-disc list-inside text-sm'>
                                 <li>JavaScript</li>
                                 <li>TypeScript</li>
@@ -117,6 +122,7 @@ function App() {
                             description={project.description}
                             techs={project.techs}
                             imgPath={project.imgPath}
+                            videoPath={project.videoPath}
                             githubLink={project.githubLink}
                             deploymentLink={project.deploymentLink}
                             key={index}
@@ -130,11 +136,11 @@ function App() {
                 <div className={`bg-black rounded-2xl max-w-[622px] p-6 opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`}>
                     <h1 className='section-title mb-4 text-white'>Get In Touch</h1>
                     <p className='text-[#cfcfcf]'>
-                        Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+                        I'm highly motivated to launch my career in tech and learn from experienced developers.   My dedication and initiative make me a quick learner and a valuable addition to any team.  Feel free to reach out on LinkedIn, or email.
                     </p>
                 </div>
                 <div className='flex gap-8 max-ss:flex-col'>
-                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '200ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])}>Email Me!</a>
+                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '200ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])} href='mailto:joheb133@gmail.com'>Email Me!</a>
                     <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])}>My CV</a>
                 </div>
                 <div className={`flex gap-2 items-center opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '400ms' }}>

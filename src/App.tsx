@@ -1,4 +1,5 @@
 import profilePic from './assets/image.jpg'
+import CV from './assets/CV.pdf'
 import ProjectCard from './components/ProjectCard'
 import { FiGithub } from "react-icons/fi";
 import { TbBrandLinkedin } from "react-icons/tb";
@@ -38,7 +39,7 @@ function App() {
                             <li><a href="#projects">Projects</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ol>
-                        <a className='bg-white text-black rounded-full m-[2px] md:w-[112px] h-[52px] flex items-center justify-center'>
+                        <a className='bg-white text-black hover:cursor-pointer rounded-full m-[2px] md:w-[112px] h-[52px] flex items-center justify-center' href={CV} target='_blank'>
                             CV
                         </a>
                     </div>
@@ -141,7 +142,7 @@ function App() {
                 </div>
                 <div className='flex gap-8 max-ss:flex-col'>
                     <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '200ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])} href='mailto:joheb133@gmail.com'>Email Me!</a>
-                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])}>My CV</a>
+                    <a className={`custom-button light-button opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '300ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])} href={CV} target='_blank'>My CV</a>
                 </div>
                 <div className={`flex gap-2 items-center opacity-0 ${contactInView ? 'animate-fade-in-up' : ''}`} style={{ animationDelay: '400ms' }}>
                     <a href='https://github.com/Joheb133' target='_blank'>

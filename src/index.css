@@ -1,68 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --brand-primary: #36abff
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+    counter-reset: headingCount;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    font-family: "Inter", sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.custom-button {
+    min-width: 147px;
+    text-align: center;
+    user-select: none;
+    color: var(--brand-primary);
+    padding: 12px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: border-radius 200ms 100ms ease-in-out;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.dark-button {
+    border: solid 1px white;
+    background: black;
+    box-shadow:
+        7px 7px 0 0px rgb(0, 0, 0),
+        7px 7px 0 1px rgb(255, 255, 255);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.light-button {
+    border: solid 1px black;
+    background: rgb(255, 255, 255);
+    box-shadow:
+        7px 7px 0 0px rgb(255, 255, 255),
+        7px 7px 0 0.85px rgb(0, 0, 0);
+}
+
+.custom-button:active {
+    transform: translate(8px, 8px);
+    box-shadow: none;
+}
+
+.custom-button:hover {
+    border-radius: 12px;
+    transition: border-radius 100ms ease-in-out;
+}
+
+@layer components {
+    .navbar::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(37, 37, 37, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: -1;
+        border-radius: 999px;
+    }
+
+    .navbar {
+        @apply fixed left-1/2 -translate-x-1/2 flex items-center justify-center rounded-full max-w-fit mt-5 z-20
+    }
+
+    @keyframes scaleIn {
+        0% {
+            scale: 0;
+        }
+
+        65% {
+            scale: 1.1
+        }
+
+        100% {
+            scale: 1;
+        }
+    }
+
+    .navbar {
+        transform-origin: top left;
+        animation: scaleIn 400ms ease-out;
+    }
+
+    .navbar .links {
+        opacity: 1;
+        counter-reset: navLinkCount;
+        color: white;
+        display: flex;
+        gap: 16px;
+    }
+
+    .navbar .long {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .navbar .small {
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transform: translate(0, 40px);
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: rgba(37, 37, 37, 0.7);
+        backdrop-filter: blur(5px);
+        gap: 8px;
+        align-items: center;
+        padding: 8px;
+        animation: openMenu 300ms ease-in-out forwards;
+    }
+
+    @keyframes openMenu {
+        from {
+            scale: 0;
+            opacity: 0;
+            transform-origin: center;
+        }
+
+        to {
+            scale: 1;
+            opacity: 1;
+        }
+    }
+
+    .navbar .small ol {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .navbar .small a {
+        width: 100%;
+    }
+
+    .navbar .small li {
+        width: 100%;
+        padding: 8px 48px;
+        border-radius: 8px;
+        background-color: rgba(12, 12, 12, 0.7);
+    }
+
+    .navbar .links a::before {
+        content: "0" counter(navLinkCount) ".";
+        counter-increment: navLinkCount;
+        color: var(--brand-primary);
+        font-family: monospace;
+        font-size: 16px;
+        margin-right: 2px;
+    }
+
+    .navbar .links li {
+        transition: color 200ms ease-in-out;
+    }
+
+    .navbar .links li:hover {
+        color: var(--brand-primary);
+        transition: color 100ms ease-in-out;
+    }
+
+    .section-title {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 40px;
+    }
+
+    .section-title::before {
+        content: counter(headingCount) ". ";
+        counter-increment: headingCount;
+        color: var(--brand-primary);
+        font-family: monospace;
+        font-size: 36px;
+    }
+
+    .icon {
+        @apply text-[#BABABB] cursor-pointer hover:text-brand-primary transition-colors duration-200 ease-in-out
+    }
 }

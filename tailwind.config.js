@@ -7,7 +7,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-primary': '#00D42F'
+                'brand-primary': '#36abff' //#00D42F
             },
             screens: {
                 'ss': '374px',

@@ -58,7 +58,7 @@ function App() {
                     </div>
                     <h1 className='text-7xl max-lg:text-5xl font-bold animate-fade-in-up' style={{ animationDelay: '200ms', opacity: 0 }}>I build web projects</h1>
                     <p className='max-w-lg my-4 mx-1 animate-fade-in-up' style={{ animationDelay: '250ms', opacity: 0 }}>
-                        I'm a passionate fullstack web developer based in Dublin, Ireland, eager to tackle projects that challenge me and contribute to a collaborative team environment. I'm currently seeking opportunities to leverage my skills and grow as a software engineer.
+                        I'm a fullstack web developer based in Dublin, Ireland, eager to tackle projects that challenge me and contribute to a collaborative team environment. I'm currently seeking opportunities to leverage my skills and grow as a software engineer.
                     </p>
                     <a className='custom-button dark-button opacity-0 animate-fade-in-up' style={{ animationDelay: '400ms' }} onAnimationEnd={(event) => handleAnimationEnd(event, ['animate-fade-in-up', 'opacity-0'])} href='mailto:joheb133@gmail.com'>
                         Get In Touch
